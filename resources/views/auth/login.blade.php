@@ -24,25 +24,6 @@
             padding: 36px 32px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
         }
-        .role-btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 14px;
-            background: var(--bg-surface-elevated);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-sm);
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 0.84rem;
-            font-weight: 600;
-            transition: all 0.2s ease;
-        }
-        .role-btn:hover {
-            border-color: var(--primary);
-            background: #1f2d45;
-            transform: translateX(4px);
-        }
     </style>
 </head>
 <body>
@@ -80,20 +61,19 @@
             @csrf
             <div class="form-group">
                 <label class="form-label">Email Address</label>
-                <input type="email" name="email" value="{{ old('email', 'admin@inventory.local') }}" class="form-control" required placeholder="name@company.com">
+                <input type="email" name="email" value="{{ old('email') }}" class="form-control" required placeholder="name@company.com" autocomplete="email">
             </div>
 
             <div class="form-group">
                 <label class="form-label">Password</label>
-                <input type="password" name="password" value="password123" class="form-control" required placeholder="••••••••">
+                <input type="password" name="password" class="form-control" required placeholder="••••••••" autocomplete="current-password">
             </div>
 
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; font-size: 0.85rem;">
                 <label style="display: flex; align-items: center; gap: 8px; color: var(--text-secondary); cursor: pointer;">
-                    <input type="checkbox" name="remember" checked style="accent-color: var(--primary);">
+                    <input type="checkbox" name="remember" style="accent-color: var(--primary);">
                     <span>Remember me</span>
                 </label>
-                <span style="color: var(--text-muted); font-size: 0.78rem;">Default: password123</span>
             </div>
 
             <button type="submit" class="btn btn-primary" style="width: 100%; padding: 11px;">
@@ -101,59 +81,6 @@
                 <span>Sign In to Dashboard</span>
             </button>
         </form>
-
-        <!-- 1-Click Role Switcher Demo -->
-        <div style="margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--border-subtle);">
-            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 700; margin-bottom: 12px; text-align: center;">
-                Fast 1-Click Demo Login (Select Role)
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-                <a href="{{ route('login.quick', 'admin') }}" class="role-btn">
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <span style="font-size: 1.1rem;">👑</span>
-                        <div>
-                            <div>System Administrator</div>
-                            <span style="font-size: 0.72rem; color: var(--text-muted);">Full access, deletes, user management</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-danger">ADMIN</span>
-                </a>
-
-                <a href="{{ route('login.quick', 'manager') }}" class="role-btn">
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <span style="font-size: 1.1rem;">💼</span>
-                        <div>
-                            <div>Warehouse Manager</div>
-                            <span style="font-size: 0.72rem; color: var(--text-muted);">Manage products, suppliers, stock audits</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-info">MANAGER</span>
-                </a>
-
-                <a href="{{ route('login.quick', 'staff') }}" class="role-btn">
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <span style="font-size: 1.1rem;">📦</span>
-                        <div>
-                            <div>Inventory Staff</div>
-                            <span style="font-size: 0.72rem; color: var(--text-muted);">View catalog & record Stock In / Out</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-success">STAFF</span>
-                </a>
-
-                <a href="{{ route('login.quick', 'auditor') }}" class="role-btn">
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <span style="font-size: 1.1rem;">👁️</span>
-                        <div>
-                            <div>Auditor / Viewer</div>
-                            <span style="font-size: 0.72rem; color: var(--text-muted);">Read-only catalog, charts & CSV exports</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-warning">AUDITOR</span>
-                </a>
-            </div>
-        </div>
     </div>
 
     <script>

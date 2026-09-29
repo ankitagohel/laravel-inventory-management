@@ -111,16 +111,16 @@
             <h1 class="topbar-title">@yield('page_title', 'Inventory Overview')</h1>
 
             <div class="topbar-actions">
-                <!-- Fast Role Switcher Pill Bar for Testing -->
-                <div style="display: flex; align-items: center; gap: 6px; background: var(--bg-surface); padding: 4px 8px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-size: 0.78rem;">
-                    <span style="color: var(--text-muted); font-weight: 600; display: flex; align-items: center; gap: 4px;">
-                        <i data-lucide="user-check" style="width: 14px; height: 14px;"></i> Role:
-                    </span>
-                    <a href="{{ route('login.quick', 'admin') }}" class="btn-sm" style="padding: 2px 8px; border-radius: 4px; text-decoration: none; font-weight: 700; color: {{ auth()->user()?->role === 'admin' ? '#fff' : 'var(--text-muted)' }}; background: {{ auth()->user()?->role === 'admin' ? 'var(--danger)' : 'transparent' }};">Admin</a>
-                    <a href="{{ route('login.quick', 'manager') }}" class="btn-sm" style="padding: 2px 8px; border-radius: 4px; text-decoration: none; font-weight: 700; color: {{ auth()->user()?->role === 'manager' ? '#fff' : 'var(--text-muted)' }}; background: {{ auth()->user()?->role === 'manager' ? 'var(--info)' : 'transparent' }};">Manager</a>
-                    <a href="{{ route('login.quick', 'staff') }}" class="btn-sm" style="padding: 2px 8px; border-radius: 4px; text-decoration: none; font-weight: 700; color: {{ auth()->user()?->role === 'staff' ? '#fff' : 'var(--text-muted)' }}; background: {{ auth()->user()?->role === 'staff' ? 'var(--success)' : 'transparent' }};">Staff</a>
-                    <a href="{{ route('login.quick', 'auditor') }}" class="btn-sm" style="padding: 2px 8px; border-radius: 4px; text-decoration: none; font-weight: 700; color: {{ auth()->user()?->role === 'auditor' ? '#fff' : 'var(--text-muted)' }}; background: {{ auth()->user()?->role === 'auditor' ? 'var(--warning)' : 'transparent' }};">Auditor</a>
-                </div>
+                <!-- Current Logged-in User Profile & Role Title -->
+                @if(auth()->check())
+                    <div style="display: flex; align-items: center; gap: 8px; background: var(--bg-surface); padding: 5px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-size: 0.82rem;">
+                        <i data-lucide="user" style="width: 15px; height: 15px; color: var(--text-secondary);"></i>
+                        <span style="font-weight: 600; color: var(--text-primary);">{{ auth()->user()->name }}</span>
+                        <span class="badge {{ auth()->user()->role_badge_class }}" style="font-size: 0.68rem; padding: 2px 7px;">
+                            {{ strtoupper(auth()->user()->role) }}
+                        </span>
+                    </div>
+                @endif
 
                 @if(auth()->check() && auth()->user()->canRecordMovements())
                     <button type="button" class="btn btn-primary btn-sm" onclick="openQuickStockModal()">

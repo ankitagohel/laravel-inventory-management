@@ -38,8 +38,8 @@
                     <i data-lucide="indian-rupee"></i>
                 </div>
             </div>
-            <div class="kpi-value">₹{{ number_format($totalCostValuation, 2) }}</div>
-            <div class="kpi-sub">Retail value: ₹{{ number_format($totalRetailValuation, 2) }}</div>
+            <div class="kpi-value" title="₹{{ number_format($totalCostValuation, 2) }}">₹{{ number_format($totalCostValuation, 2) }}</div>
+            <div class="kpi-sub" title="₹{{ number_format($totalRetailValuation, 2) }}">Retail value: ₹{{ number_format($totalRetailValuation, 2) }}</div>
         </div>
 
         <!-- Low Stock Alerts -->

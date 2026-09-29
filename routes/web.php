@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 // Public Authentication
 Route::get('login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('login', [AuthController::class, 'login'])->name('login.post');
-Route::get('login/quick/{role}', [AuthController::class, 'quickLogin'])->name('login.quick');
+if (app()->environment('local')) {
+    Route::get('login/quick/{role}', [AuthController::class, 'quickLogin'])->name('login.quick');
+}
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 // Authenticated Routes
