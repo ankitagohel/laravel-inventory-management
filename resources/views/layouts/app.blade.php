@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Dashboard') – {{ config('app.name', 'StockMaster IMS') }}</title>
+    <title>@yield('title', 'Dashboard') – {{ config('app.name', 'HomeStock IMS') }}</title>
     
     <!-- Design & Styling -->
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
@@ -24,7 +24,7 @@
                 <i data-lucide="boxes"></i>
             </div>
             <div class="brand-text">
-                <h2>StockMaster</h2>
+                <h2>HomeStock</h2>
                 <span>Inventory System</span>
             </div>
         </div>

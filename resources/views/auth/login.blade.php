@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In – StockMaster IMS</title>
+    <title>Sign In – HomeStock IMS</title>
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -34,7 +34,7 @@
             <div class="brand-icon" style="margin: 0 auto 14px; width: 48px; height: 48px;">
                 <i data-lucide="boxes" style="width: 26px; height: 26px;"></i>
             </div>
-            <h2 style="font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em;">StockMaster IMS</h2>
+            <h2 style="font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em;">HomeStock IMS</h2>
             <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 4px;">Role-Based Inventory Access Control</p>
         </div>
 

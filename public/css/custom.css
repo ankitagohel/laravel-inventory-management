@@ -1,4 +1,4 @@
-/* StockMaster Modern Design System */
+/* HomeStock Modern Design System */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
@@ -8,7 +8,7 @@
     --bg-input: #162032;
     --border-subtle: #1e293b;
     --border-glow: rgba(99, 102, 241, 0.25);
-    
+
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
@@ -19,7 +19,7 @@
 
     --success: #10b981;
     --success-light: rgba(16, 185, 129, 0.12);
-    
+
     --warning: #f59e0b;
     --warning-light: rgba(245, 158, 11, 0.12);
 
@@ -58,13 +58,16 @@ body {
     width: 6px;
     height: 6px;
 }
+
 ::-webkit-scrollbar-track {
     background: var(--bg-main);
 }
+
 ::-webkit-scrollbar-thumb {
     background: #334155;
     border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: #475569;
 }
@@ -284,11 +287,30 @@ body {
 }
 
 /* Color Accents */
-.kpi-indigo .kpi-icon { background: var(--primary-light); color: var(--primary); }
-.kpi-emerald .kpi-icon { background: var(--success-light); color: var(--success); }
-.kpi-amber .kpi-icon { background: var(--warning-light); color: var(--warning); }
-.kpi-rose .kpi-icon { background: var(--danger-light); color: var(--danger); }
-.kpi-sky .kpi-icon { background: var(--info-light); color: var(--info); }
+.kpi-indigo .kpi-icon {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.kpi-emerald .kpi-icon {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.kpi-amber .kpi-icon {
+    background: var(--warning-light);
+    color: var(--warning);
+}
+
+.kpi-rose .kpi-icon {
+    background: var(--danger-light);
+    color: var(--danger);
+}
+
+.kpi-sky .kpi-icon {
+    background: var(--info-light);
+    color: var(--info);
+}
 
 /* Panels & Cards */
 .panel {
@@ -411,25 +433,37 @@ body {
     background: var(--success-light);
     color: var(--success);
 }
-.badge-success .badge-dot { background: var(--success); }
+
+.badge-success .badge-dot {
+    background: var(--success);
+}
 
 .badge-warning {
     background: var(--warning-light);
     color: var(--warning);
 }
-.badge-warning .badge-dot { background: var(--warning); }
+
+.badge-warning .badge-dot {
+    background: var(--warning);
+}
 
 .badge-danger {
     background: var(--danger-light);
     color: var(--danger);
 }
-.badge-danger .badge-dot { background: var(--danger); }
+
+.badge-danger .badge-dot {
+    background: var(--danger);
+}
 
 .badge-info {
     background: var(--info-light);
     color: var(--info);
 }
-.badge-info .badge-dot { background: var(--info); }
+
+.badge-info .badge-dot {
+    background: var(--info);
+}
 
 /* Buttons */
 .btn {
@@ -472,6 +506,7 @@ body {
     background: var(--success);
     color: #fff;
 }
+
 .btn-success:hover {
     background: #059669;
 }
@@ -480,6 +515,7 @@ body {
     background: var(--danger);
     color: #fff;
 }
+
 .btn-danger:hover {
     background: #e11d48;
 }
@@ -598,6 +634,7 @@ body {
         opacity: 0;
         transform: translateY(12px) scale(0.97);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -669,7 +706,8 @@ body {
     gap: 6px;
 }
 
-.pagination-links a, .pagination-links span {
+.pagination-links a,
+.pagination-links span {
     padding: 6px 12px;
     border-radius: var(--radius-sm);
     border: 1px solid var(--border-subtle);

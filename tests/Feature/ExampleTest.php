@@ -15,7 +15,7 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/login');
         $response->assertStatus(200);
-        $response->assertSee('StockMaster IMS');
+        $response->assertSee('HomeStock IMS');
     }
 
     public function test_authenticated_dashboard_returns_success(): void

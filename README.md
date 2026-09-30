@@ -1,4 +1,4 @@
-# StockMaster – Laravel Inventory Management System
+# HomeStock – Laravel Inventory Management System
 
 A modern, high-performance **Inventory Management System** built with **Laravel 12, PHP 8.2, and MySQL**, featuring real-time stock level monitoring, an immutable transaction audit ledger, low-stock threshold triggers, and dynamic analytics.
 

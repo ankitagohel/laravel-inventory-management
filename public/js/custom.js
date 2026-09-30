@@ -1,4 +1,4 @@
-// StockMaster Global Interactivity
+// HomeStock Global Interactivity
 
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
@@ -42,7 +42,7 @@ function openQuickStockModal(productId = '', productName = '', currentStock = 0,
 function handleTypeChange(type) {
     const qtyLabel = document.getElementById('modal_qty_label');
     const qtyHelp = document.getElementById('modal_qty_help');
-    
+
     if (type === 'IN') {
         if (qtyLabel) qtyLabel.textContent = 'Quantity to Receive (+)';
         if (qtyHelp) qtyHelp.textContent = 'Adds to current stock.';
